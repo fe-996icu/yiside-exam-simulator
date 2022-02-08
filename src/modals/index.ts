@@ -1,13 +1,13 @@
 
-/**问题列表 */
+/**问题类型 */
 export enum QuestionType{
-	text,
-	radio,
-	multiple,
-	textarea,
+	TEXT,
+	RADIO,
+	MULTIPLE,
+	TEXTAREA,
 }
 
-/**问题 */
+/**问题实体 */
 export type Question = {
 	id: number,
 	type: QuestionType,
