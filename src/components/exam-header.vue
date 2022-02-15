@@ -1,18 +1,20 @@
 // 考试-头部组件
 <template>
 	<section class="exam-header-wrap">
-		<a-button type="primary" ghost>i</a-button>
-		<a-button v-for="i of 20" :key="i">{{i}}</a-button>
+		<a-button v-for="(item, i) in exam.questions" :key="item.id" @click="onClick(item, i)"
+				:type="i==exam.current?'primary':'default'">{{i+1}}</a-button>
 	</section>
 </template>
 
 <script setup lang="ts">
+	import { Question } from '../types/models'
+	import useExamStore from '../store/exam'
 
-	import { ref } from 'vue'
+	const exam = useExamStore();
 
-	defineProps<{ msg: string }>()
-
-	const count = ref(0)
+	const onClick = (item:Question, i:number)=>{
+		exam.current = i;
+	};
 </script>
 
 <style lang="scss" scoped>
