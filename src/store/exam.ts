@@ -94,7 +94,10 @@ const store = defineStore({
 		},
 		startExam(){
 			this.initQuestions();
+			// 记录开始考试时间
 			this.testPaper.startTime = Date.now();
+			// 重置到第一题
+			this.current = 0;
 		},
 		stopExam(){
 			// 答题卡为空，异常
