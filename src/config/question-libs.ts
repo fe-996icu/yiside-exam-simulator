@@ -1,21 +1,197 @@
-/*题库
- * @Author: zhangjianzhong
- * @Date: 2022-02-07 18:25:55
- * @Last Modified by: zhangjianzhong
- * @Last Modified time: 2022-02-07 18:37:38
- */
+// 题库
+import { ExamResultStatus, QuestionType } from "@/types/enums"
+import { Question, TestPaper } from "../types/models"
+import { ESC_CODE } from "./global-constants"
 
-import { Question, QuestionType } from "../modals";
-import { ESC_PLACEHOLDER } from "./global-constants";
+const { BR, INPUT } = ESC_CODE;
 
 const questions:Question[] = [
-,,,,,,,,,,,,,,,,
-].fill({
-	id: 1,
-	type: QuestionType.TEXT,
-	question: `请默写第一条核心价值观及三个阐释词（${ESC_PLACEHOLDER}） ${ESC_PLACEHOLDER} ${ESC_PLACEHOLDER} ${ESC_PLACEHOLDER}`,
-	score: 12,
-	desc: '按空得分',
-});
+	{
+		id: 1,
+		type: QuestionType.TEXT,
+		question: `请默写第一条核心价值观及三个阐释词${BR}（${INPUT}） ${INPUT} ${INPUT} ${INPUT}`,
+		score: 12,
+		desc: '按空得分',
+		answer: ['正直', '简单坦诚', '坚持正道', '勇于担当'],
+	},
+	{
+		id: 2,
+		type: QuestionType.TEXT,
+		question: `请默写第二条核心价值观及三个阐释词${BR}（${INPUT}） ${INPUT} ${INPUT} ${INPUT}`,
+		score: 12,
+		desc: '按空得分',
+		answer: ['认真', '细致认真', '尽职尽责', '追求卓越'],
+	},
+	{
+		id: 3,
+		type: QuestionType.TEXT,
+		question: `请默写第三条核心价值观及三个阐释词${BR}（${INPUT}） ${INPUT} ${INPUT} ${INPUT}`,
+		score: 12,
+		desc: '按空得分',
+		answer: ['坚毅', '艰苦奋斗', '投入热爱', '坚持不懈'],
+	},
+	{
+		id: 4,
+		type: QuestionType.TEXT,
+		question: `请默写第四条核心价值观及三个阐释词${BR}（${INPUT}） ${INPUT} ${INPUT} ${INPUT}`,
+		score: 12,
+		desc: '按空得分',
+		answer: ['创新', '精益求精', '敢于尝试', '持续突破'],
+	},
+	{
+		id: 5,
+		type: QuestionType.TEXT,
+		question: `请默写第五条核心价值观及三个阐释词${BR}（${INPUT}） ${INPUT} ${INPUT} ${INPUT}`,
+		score: 12,
+		desc: '按空得分',
+		answer: ['拥抱变化', '积极开放', '勇往直前', '持续激情'],
+	},
+	{
+		id: 6,
+		type: QuestionType.TEXT,
+		question: `请默写第六条核心价值观及三个阐释词${BR}（${INPUT}） ${INPUT} ${INPUT} ${INPUT}`,
+		score: 12,
+		desc: '按空得分',
+		answer: ['成就客户', '客户视角', '共享共担', '客户成功'],
+	},
+	{
+		id: 7,
+		type: QuestionType.TEXT,
+		question: `这一条话术代表哪条价值观${BR}简单相信，傻傻坚持 ${INPUT}`,
+		score: 3,
+		desc: null,
+		answer: ['坚毅'],
+	},
+	{
+		id: 8,
+		type: QuestionType.TEXT,
+		question: `这一条话术代表哪条价值观${BR}不处罚错误，处罚不认真 ${INPUT}`,
+		score: 3,
+		desc: null,
+		answer: ['认真'],
+	},
+	{
+		id: 9,
+		type: QuestionType.TEXT,
+		question: `这一条话术代表哪条价值观${BR}唯一不变的是变化本身 ${INPUT}`,
+		score: 3,
+		desc: null,
+		answer: ['拥抱变化'],
+	},
+	{
+		id: 10,
+		type: QuestionType.TEXT,
+		question: `这一条话术代表哪条价值观${BR}做正确的事 ${INPUT}`,
+		score: 3,
+		desc: null,
+		answer: ['正直'],
+	},
+	{
+		id: 11,
+		type: QuestionType.TEXT,
+		question: `这一条话术代表哪条价值观${BR}与其更好，不如不同 ${INPUT}`,
+		score: 3,
+		desc: null,
+		answer: ['创新'],
+	},
+	{
+		id: 12,
+		type: QuestionType.TEXT,
+		question: `这一条话术代表哪条价值观${BR}通过成就他人来成就自己 ${INPUT}`,
+		score: 3,
+		desc: null,
+		answer: ['成就客户'],
+	},
+	{
+		id: 13,
+		type: QuestionType.TEXT,
+		question: `下面案例触碰了哪条价值观的高压线${BR}将公司经营策略、研发方向泄露给对标企业 ${INPUT}`,
+		score: 1,
+		desc: null,
+		answer: ['正直'],
+	},
+	{
+		id: 14,
+		type: QuestionType.TEXT,
+		question: `下面案例触碰了哪条价值观的高压线${BR}客户反馈货品质量出现问题，各部门相互推诿，第一时间不是解决问题而是推卸责任，给客户造成不满 ${INPUT}`,
+		score: 1,
+		desc: null,
+		answer: ['成就客户'],
+	},
+	{
+		id: 15,
+		type: QuestionType.TEXT,
+		question: `下面案例触碰了哪条价值观的高压线${BR}上班迟到，担心扣考勤工资，提交补卡申请 ${INPUT}`,
+		score: 1,
+		desc: null,
+		answer: ['正直'],
+	},
+	{
+		id: 16,
+		type: QuestionType.TEXT,
+		question: `下面案例触碰了哪条价值观的高压线${BR}与客户和供应商串通，将公司订单私下处理 ${INPUT}`,
+		score: 1,
+		desc: null,
+		answer: ['正直'],
+	},
+	{
+		id: 17,
+		type: QuestionType.TEXT,
+		question: `下面案例触碰了哪条价值观的高压线${BR}拒绝公司内部调动决定，未按规定时间报到 ${INPUT}`,
+		score: 1,
+		desc: null,
+		answer: ['拥抱变化'],
+	},
+	{
+		id: 18,
+		type: QuestionType.TEXT,
+		question: `下面案例触碰了哪条价值观的高压线${BR}对待工作敷衍拖沓，经常性的接到工作任务不能按时按要求完成 ${INPUT}`,
+		score: 1,
+		desc: null,
+		answer: ['认真'],
+	},
+	{
+		id: 19,
+		type: QuestionType.TEXT,
+		question: `下面案例触碰了哪条价值观的高压线${BR}触犯国家法律法规 ${INPUT}`,
+		score: 1,
+		desc: null,
+		answer: ['正直'],
+	},
+	{
+		id: 20,
+		type: QuestionType.TEXT,
+		question: `下面案例触碰了哪条价值观的高压线${BR}收受佣金、回扣 ${INPUT}`,
+		score: 1,
+		desc: null,
+		answer: ['正直'],
+	},
+	{
+		id: 21,
+		type: QuestionType.TEXT,
+		question: `下面案例触碰了哪条价值观的高压线${BR}工作拖沓，经常性的影响其他同事工作进度，多次受到投诉 ${INPUT}`,
+		score: 1,
+		desc: null,
+		answer: ['成就客户'],
+	},
+	{
+		id: 22,
+		type: QuestionType.TEXT,
+		question: `下面案例触碰了哪条价值观的高压线${BR}拒不响应公司政策、结构调整等决策，影响公司变革 ${INPUT}`,
+		score: 1,
+		// desc: null,
+		answer: ['拥抱变化'],
+	},
+];
 
-export default questions;
+// 试卷对象
+const testPaper:TestPaper = {
+	fullScore: 100,
+	passScore: 90,
+	duration: 1000 * 60 * 30,
+	description: '30分钟答题',
+	questions,
+	result: ExamResultStatus.UNSTART,
+};
+
+export default testPaper;
