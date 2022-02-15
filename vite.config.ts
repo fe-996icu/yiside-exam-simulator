@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+// 按需引入
 import Components from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 
@@ -20,6 +21,7 @@ export default defineConfig({
 		Components({
 			resolvers: [
 				// ElementPlusResolver(),
+				// antd-vue按需引入
 				AntDesignVueResolver(),
 			],
 			// `globalComponentsDeclaration` has renamed to `dts`
