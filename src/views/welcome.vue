@@ -21,11 +21,8 @@ const onClick = ()=>{
 		content: '考试开始后，不能切屏不能后台运行哦',
 		onOk(){
 			router.push({
-				path: '/exam'
+				path: '/exam',
 			});
-		},
-		onCancel(){
-			console.log('Cancel');
 		},
 	});
 };
