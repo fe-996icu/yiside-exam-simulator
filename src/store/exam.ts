@@ -97,10 +97,12 @@ const store = defineStore({
 			this.testPaper.startTime = Date.now();
 		},
 		stopExam(){
+			// 答题卡为空，异常
 			if(this.answerSheet.length == 0){
 				return false;
 			}
 
+			// 完成时间已经存在，说明是提前交卷或强制交卷，不在更关心完成时间字段
 			if(!this.testPaper.finishTime){
 				this.testPaper.finishTime = Date.now();
 			}
