@@ -142,7 +142,7 @@
 				content: '判题失败，请重新考试！！！',
 				okText: '重考',
 				onOk(){
-					router.push({
+					router.replace({
 						path: '/welcome',
 					});
 				},

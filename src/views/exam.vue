@@ -63,7 +63,7 @@
 	const onClickButton = ()=>{
 		if(isFinally.value){
 			// 交卷
-			router.push({
+			router.replace({
 				path: '/result',
 			});
 		}else{
@@ -93,7 +93,7 @@
 			content: '终止考试，强制交卷！！！',
 			okText: '好吧o(╥﹏╥)o',
 			onOk(){
-				router.push({
+				router.replace({
 					path: '/result',
 				});
 			},
